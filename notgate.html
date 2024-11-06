@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOT Gate Simulator</title>
+   <style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gate {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.input, .output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.not-gate {
+    width: 100px;
+    height: 50px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.gate-symbol {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-top: 10px;
+}
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: 10px;
+    background-color: #ccc; /* Default color */
+}
+
+.indicator.active {
+    background-color: #4caf50; /* Green for active */
+}
+
+.indicator.inactive {
+    background-color: #f44336; /* Red for inactive */
+}
+.return {
+  position: absolute;
+  bottom: 25px;
+  color: #0056b3;
+  font-size: large;
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NOT Gate Simulator</h1>
+        <div class="gate">
+            <div class="input">
+                <label for="inputSwitch">Input:</label>
+                <input type="checkbox" id="inputSwitch">
+                <div class="indicator" id="inputIndicator"></div>
+            </div>
+            <div class="not-gate">
+                <div class="gate-symbol">NOT</div>
+            </div>
+            <div class="output">
+                <label for="output">Output:</label>
+                <span id="output">0</span>
+                <div class="indicator" id="outputIndicator"></div>
+            </div>
+        </div>
+        <button id="resetButton">Reset</button>
+    </div>
+<div class="return">
+  <a href="index.html">Back to home</a>
+</div>
+
+    <script >// script.js
+        const inputSwitch = document.getElementById('inputSwitch');
+        const outputDisplay = document.getElementById('output');
+        const inputIndicator = document.getElementById('inputIndicator');
+        const outputIndicator = document.getElementById('outputIndicator');
+        const resetButton = document.getElementById('resetButton');
+        
+        inputSwitch.addEventListener('change', () => {
+            // NOT gate logic: output is the inverse of the input
+            const outputValue = inputSwitch.checked ? 0 : 1;
+            outputDisplay.textContent = outputValue;
+        
+            // Update indicators
+            updateIndicators();
+        });
+        
+        // Function to update indicators based on input and output states
+        function updateIndicators() {
+            if (inputSwitch.checked) {
+                inputIndicator.classList.add('active');
+                inputIndicator.classList.remove('inactive');
+            } else {
+                inputIndicator.classList.remove('active');
+                inputIndicator.classList.add('inactive');
+            }
+        
+            outputIndicator.classList.toggle('active', outputDisplay.textContent == '1');
+            outputIndicator.classList.toggle('inactive', outputDisplay.textContent == '0');
+        }
+        
+        // Reset functionality
+        resetButton.addEventListener('click', () => {
+            inputSwitch.checked = false;
+            outputDisplay.textContent = '0';
+            updateIndicators();
+        });
+        ``</script>
+</body>
+</html>

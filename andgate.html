@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AND Gate Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .gate-container {
+            top: 50px;
+            width: 70%;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+        }
+        .gate-container p{
+            position: relative;
+            height: auto;
+            top: 10px;
+            font-size: x-large;
+        }
+        .gate-container img{
+            height: auto;
+            width: 130px;
+        }
+        .input-image {
+            width: 100px; /* Adjust size as needed */
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .input-image.active {
+            transform: scale(1.1); /* Slightly enlarge when active */
+        }
+        .output {
+            width: 150px;
+            height: 100px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px;
+            background-color: #fff;
+        }
+        .output.active {
+            background-color: #4caf50; /* Green when output is true */
+        }
+        .gate-image {
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto;
+        }
+        .return {
+            position: relative;
+            top: 150px;
+        }
+          .return a{
+          height: 50px;
+          width: auto;
+          color: black;
+          font-size: large;
+        }
+        .return a:hover {
+          color: #0084c1;
+          font-size: larger;
+          transition-duration: 0.3s;
+        }   
+    </style>
+</head>
+<body>
+
+    <h1>AND Gate Demo</h1>
+    <div class="gate-container">
+        <img src="https://www.iconsdb.com/icons/preview/red/button-off-xxl.png" id="toggleImage" class="input-image" onclick="toggleImage(); toggleInputOne();" />
+
+        <img src="https://www.iconsdb.com/icons/preview/red/button-off-xxl.png" id="toggleImage2" class="input-image" onclick="toggleImage2(); toggleInputTwo();" />
+        <div class="output" id="output"> <p>Output</p></div>
+    </div>
+    <div class="return">
+        <a href="index.html">Back to Home</a>
+      </div>
+    <script>
+        let inputOneActive = false;
+        let inputTwoActive = false;
+
+        function toggleImage() {
+            inputOneActive = !inputOneActive;
+            const img = document.getElementById('toggleImage');
+            img.src = inputOneActive 
+                ? 'https://www.iconsdb.com/icons/preview/green/button-on-xxl.png' 
+                : 'https://www.iconsdb.com/icons/preview/red/button-off-xxl.png';
+            img.classList.toggle('active');
+            updateOutput();
+        }
+
+        function toggleImage2() {
+            inputTwoActive = !inputTwoActive;
+            const img = document.getElementById('toggleImage2');
+            img.src = inputTwoActive 
+                ? 'https://www.iconsdb.com/icons/preview/green/button-on-xxl.png' 
+                : 'https://www.iconsdb.com/icons/preview/red/button-off-xxl.png';
+            img.classList.toggle('active');
+            updateOutput();
+        }
+
+        function updateOutput() {
+            const outputElement = document.getElementById('output');
+
+            // AND gate logic: output is true only if both inputs are true
+            if (inputOneActive && inputTwoActive) {
+                outputElement.classList.add('active');
+            } else {
+                outputElement.classList.remove('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

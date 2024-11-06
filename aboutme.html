@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="icon" type="image/x-icon" href="css/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    </head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+        <nav><div class="hideOnMobile">
+            <a href="index.html">Home</a>
+            <a href="course.html">Course</a>
+            <a href="project.html">Project</a>
+            <a href="concepts.html">Concepts</a>
+            <a href="databases.html">Databases</a>
+            <a href="document.html">Documentations</a>
+            <a href="#">About us</a>
+            <div class="animation start-home"></div>
+        </div>
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            <div class="sidebar">
+                <li class="menu-button-1" onclick=hideSidebar()><a href="#"><i class="ri-close-large-fill"></i></a>
+                <ul>
+                    <li class="nav__link"><a href="index.html" >Home</a></li>
+                    <li class="nav__link"><a href="course.html" >Course</a></li>
+                    <li class="nav__link"><a href="project.html">Project</a></li>
+                    <li class="nav__link"><a href="concepts.html">Concepts</a></li>
+                    <li class="nav__link"><a href="databases.html">Databases</a></li>
+                    <li class="nav__link"><a href="document.html">Documentations</a></li>
+                    <li class="nav__link"><a href="#">About us</a></li>
+                </ul>
+            </div>
+            </div>
+          </nav>
+          <script>
+            function showSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'  
+            }
+            function hideSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+          </script>
+    </header>
+    <section class="about">
+        <div class="content">
+            <img src="images/design.png" height="150px">
+            <div class="text">
+                <h1>About Us</h1>
+                <h3>Antonio Itza</h5>
+                <h5>Developer / Graphic Designer</h5>
+                <p>In terms of my interests and hobbies, I am a jack-of-all-trades. In addition to pursuing artistic endeavors like photography, video editing, graphic design, web design, and programming, I enjoy playing sports like football, basketball, and volleyball. Even though I might not always be the greatest or the smartest, I always give every task the maximum effort. My ultimate objective is to make it as a marketing manager or web developer. Even if the path may be difficult, I'm determined to persevere until all of my goals are met.
+                </p>
+                <button type="button"><a href="resume.html">Hire me</a></button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="foot">
+            <h1>Follow us: </h1>
+         </div>
+        <div class="nav__social">
+            <a href="https://www.instagram.com/inactive.xx_jkicker/" target="_blank" class="nav__social-link">
+               <i class="ri-instagram-line"></i>
+            </a>
+
+            <a href="https://github.com/Jkicker-bz" target="_blank" class="nav__social-link">
+               <i class="ri-github-line"></i>
+            </a>
+
+            <a href="https://www.twitch.tv/jkicker_bz" target="_blank" class="nav__social-link">
+               <i class="ri-twitch-fill"></i>
+            </a>
+
+            <a href="https://discordapp.com/users/517829523463733248" target="_blank" class="nav__social-link">
+               <i class="ri-discord-fill"></i>
+            </a>
+         </div>
+    </footer>
+</body>
+</html>

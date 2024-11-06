@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII</title>
+    <style>
+        * {
+    box-sizing: border-box; 
+    color: black;
+ }
+  .ascii img {
+    float: left;
+   padding: 40px;
+   background-color: #FFFFFF;
+   margin-right: 40px;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+  }
+
+  section h2{
+    color: black;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.711);
+  }
+  p {
+    color: white;
+  }
+  #text {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.711);
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+  }
+
+  .return a{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.711);
+    padding: 3px;
+}
+
+    .return a:hover{
+    color:  rgb(16, 87, 168)
+    }
+
+  #demo {
+    color: #0000;
+  }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Project 1: ASCII</h2>
+        <hr>	
+        
+        
+        <div class="ascii"><img src="images/ascii.png" style="width:792px;height:528px;"></div>
+                
+                    
+        
+        <p></p>
+        <p></p>         
+        
+        
+        <p id="text">Enter any number from 0 to 127 :</p>
+        <br>
+        <input id="inputdec" >
+        <p></p>
+        <button onclick="decToASCII()">Submit</button>
+        <p></p>
+        <p id="text">ASCII Value : </p>
+        <p id="demo" style="color: black;"></p>
+        
+        <script>
+        function decToASCII() {
+          x = document.getElementById("inputdec").value;
+          var res = String.fromCharCode(x);
+          document.getElementById("demo").innerHTML = res;
+          console.log(res);
+        }
+        </script>
+</section>         
+</body>
+</html>

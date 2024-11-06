@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Binary to Hex Converter</title>
+  <style>body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 200px;
+  }
+
+  .return {
+  position: absolute;
+  bottom: 25px;
+  color: #0056b3;
+  font-size: large;
+}
+  #convertButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  #hexOutput {
+    text-align: center;
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <h1>Binary to Hex Converter</h1>
+
+  <div class="container">
+    <label for="binaryInput">Binary:</label>
+    <input type="text" id="binaryInput" placeholder="Enter binary number">
+
+    <button id="convertButton">Convert</button>
+
+    <label for="hexOutput">Hexadecimal:</label>
+    <input type="text" id="hexOutput" readonly>
+  </div>
+<div class="return">
+  <a href="index.html">Back to Home</a>
+</div>
+  <script>
+const binaryInput = document.getElementById('binaryInput');
+const convertButton = document.getElementById('convertButton');
+const hexOutput = document.getElementById('hexOutput');
+
+convertButton.addEventListener('click', convertBinaryToHex);
+
+function convertBinaryToHex() {
+  const binary = binaryInput.value.trim();
+
+  // Basic validation (you can add more robust validation)
+  if (!/^[01]+$/.test(binary)) {
+    hexOutput.value = "Invalid binary input";
+    return;
+  }
+
+  const decimal = parseInt(binary, 2);
+  const hex = decimal.toString(16).toUpperCase();
+  hexOutput.value = hex;
+}
+
+  </script>
+</body>
+</html>

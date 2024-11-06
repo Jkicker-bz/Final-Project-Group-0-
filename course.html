@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="css/course_styles.css">
+    <style>
+
+    </style>
+</head>
+<body>
+  <div class="nav__background">
+    <img src="images/black.jpg" width="100%" height="100px">
+  </div>
+    <header>
+    <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+    <nav><div class="hideOnMobile">
+        <a href="index.html">Home</a>
+        <a href="#">Course</a>
+        <a href="project.html">Project</a>
+        <a href="concepts.html">Concepts</a>
+        <a href="databases.html">Databases</a>
+        <a href="document.html">Documentations</a>
+        <a href="aboutme.html">About us</a>
+        <div class="animation start-home"></div>
+    </div>
+        <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        <div class="sidebar">
+          <li class="menu-button-1" onclick=hideSidebar()><a href="#"><i class="ri-close-large-fill"></i></a>
+          <ul>
+              <li class="nav__link"><a href="index.html" >Home</a></li>
+              <li class="nav__link"><a href="#" >Course</a></li>
+              <li class="nav__link"><a href="project.html">Project</a></li>
+              <li class="nav__link"><a href="concepts.html">Concepts</a></li>
+              <li class="nav__link"><a href="databases.html">Databases</a></li>
+              <li class="nav__link"><a href="document.html">Documentations</a></li>
+              <li class="nav__link"><a href="aboutme.html">About us</a></li>
+          </ul>
+      </div>
+      </nav>
+      <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'  
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+      </script>
+</header>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<div class="title">
+  <h1>Click to play Promo Video!</h1>
+</div>
+<section class="video__background">
+    <video id="myVideo" controls autoplay muted >
+        <source src="images/Ad.mp4" type="video/mp4"> <!-- Replace with your video file -->
+        Your browser does not support the video tag.
+    </video>
+  </section>
+  <div class="background">
+    <img src="images/Lovepik_com-500348624-a-person-who-manipulates-the-data.jpg" height="auto" width="50%">
+  </div>
+  <section class="course">
+    <h1>Fundamentals of Computing (FoC)
+    </h1>
+    <p>This course is an introduction to the fundamentals of Computer Science that will provide students with a foundation for future courses in 
+      Computer Science. The course is a broad survey of the discipline through topics that allow students to understand the capabilities of computer 
+      systems in terms of: the computer architecture; operating systems and computer networks; software and software development; data organization and visualization; 
+      and the potential of computing machines.</p>
+  </section>
+
+<section class="promo">
+  <img src="images/UB-Logo.png" height="350px" width="auto">
+ <div class="promo__text"> <h3>“The University of Belize is a national, autonomous and multi-location institution committed to excellence in higher education, research and service for national development.
+    <br> As a catalyst of change it provides relevant, affordable and accessible educational and training programs that address national needs based on principles of academic freedom, equity, transparency, merit and accountability.”
+  </h3>
+ </div>
+  <div class="president">
+    <img src="images/president.png" height="250px" width="auto">
+  </div>
+</section>
+<section class="apply">
+  <center><h1>Why hesitate? Take this opportunity and apply now!
+  </h1></center>
+  <a href="https://www.ub.edu.bz/wp-content/uploads/2024/06/UB-APPLICATION-FORM-2024.pdf">Apply Now!</a>
+</section>
+<footer>
+  <div class="foot">
+      <h1>Follow us: </h1>
+   </div>
+  <div class="nav__social">
+      <a href="https://www.instagram.com/inactive.xx_jkicker/" target="_blank" class="nav__social-link">
+         <i class="ri-instagram-line"></i>
+      </a>
+
+      <a href="https://github.com/Jkicker-bz" target="_blank" class="nav__social-link">
+         <i class="ri-github-line"></i>
+      </a>
+
+      <a href="https://www.twitch.tv/jkicker_bz" target="_blank" class="nav__social-link">
+         <i class="ri-twitch-fill"></i>
+      </a>
+
+      <a href="https://discordapp.com/users/517829523463733248" target="_blank" class="nav__social-link">
+         <i class="ri-discord-fill"></i>
+      </a>
+   </div>
+</footer>
+<script>
+    const video = document.getElementById('myVideo');
+
+// Play the video with sound
+video.muted = false; // Unmute the video initially
+
+// Event listener for when the video ends
+video.addEventListener('ended', function() {
+    video.muted = true; // Mute the video after it finishes playing
+});
+
+    // Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop < 150 || document.documentElement.scrollTop < 250) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 100; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+
+</script>
+
+</body>
+</html>
