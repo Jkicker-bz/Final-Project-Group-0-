@@ -74,9 +74,9 @@
 
     <h1>AND Gate Demo</h1>
     <div class="gate-container">
-        <img src="images/button-off-xxl.png" id="toggleImage" class="input-image" onclick="toggleImage(); toggleInputOne();">
+        <img src="images/on-off.jpg" id="toggleImage" class="input-image" onclick="toggleImage(); toggleInputOne();">
 
-        <img src="images/button-off-xxl.png" id="toggleImage2" class="input-image" onclick="toggleImage2(); toggleInputTwo();">
+        <img src="images/on-off.jpg" id="toggleImage2" class="input-image" onclick="toggleImage2(); toggleInputTwo();">
         <div class="output" id="output"> <p>Output</p></div>
     </div>
     <div class="return">
@@ -90,8 +90,8 @@
             inputOneActive = !inputOneActive;
             const img = document.getElementById('toggleImage');
             img.src = inputOneActive 
-                ? 'images/button-on-xxl.png' 
-                : 'images/button-off-xxl.png';
+                ? 'images/on.jpg' 
+                : 'images/on-off.jpg';
             img.classList.toggle('active');
             updateOutput();
         }
@@ -100,8 +100,8 @@
             inputTwoActive = !inputTwoActive;
             const img = document.getElementById('toggleImage2');
             img.src = inputTwoActive 
-                ? 'images/button-on-xxl.png' 
-                : 'images/button-off-xxl.png';
+                ? 'images/on.jpg' 
+                : 'images/on-off.jpg';
             img.classList.toggle('active');
             updateOutput();
         }
