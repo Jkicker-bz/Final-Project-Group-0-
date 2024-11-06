@@ -1,0 +1,20 @@
+article {
+    float: left;
+    padding: 20px;
+    max-width: 100%;
+    width: 90%;
+    color: #ffffffc5;
+    align-items: center;
+  }
+  
+  article p{
+      padding: 5px;
+      position: relative;
+      border-radius: 20px;
+      top: 150px;
+      text-align: center;
+  }
+  article img{
+    position: relative;
+    top: 159px;
+  }
