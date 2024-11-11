@@ -7,7 +7,7 @@
 }
 body {
     background-color: #d2d2d6;
-    overflow: scroll;
+    overflow: visible;
 }
 .video__background {
     position: relative;
