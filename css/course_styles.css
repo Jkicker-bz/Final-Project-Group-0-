@@ -252,7 +252,7 @@ footer {
     }
     .video__background {
         width: 100%;
-        left: -255px;
+        left: 0;
         position: absolute;
     }
     .president {
