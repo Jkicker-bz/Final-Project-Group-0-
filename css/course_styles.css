@@ -244,7 +244,7 @@ footer {
         text-align: center;
         width: 100%;
         background-color: #03140e7e;
-        left: 0;
+        right: 0;
     }
     .background img{
         height: 250px;
